@@ -2,7 +2,7 @@
 
 A port of the [Material](https://material-theme.site) color scheme for Vim/Neovim.
 
-![](https://raw.githubusercontent.com/kaicataldo/material.vim/main/screenshots/material-all-variants.png)
+![](screenshot/example_material_vim.jpg)
 
 ## Installation
 
