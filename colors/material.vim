@@ -51,28 +51,28 @@ endfun
 
 " Default colors
 set background=dark
-let s:bg = { 'gui': '#263238', 'cterm': 'none' }
-let s:fg = { 'gui': '#eeffff', 'cterm': 231 }
-let s:invisibles = { 'gui': '#65738e', 'cterm': 66 }
-let s:comments = { 'gui': '#546e7a', 'cterm': 145 }
-let s:caret = { 'gui': '#ffcc00', 'cterm': 220 }
+let s:bg = { 'gui': '#402f31', 'cterm': 'none' }
+let s:fg = { 'gui': '#ebdbb2', 'cterm': 231 }
+let s:invisibles = { 'gui': '#694748', 'cterm': 66 }
+let s:comments = { 'gui': '#aa8588', 'cterm': 145 }
+let s:caret = { 'gui': '#f0cb74', 'cterm': 220 }
 let s:selection = { 'gui': '#2c3b41', 'cterm': 239 }
 let s:guides = { 'gui': '#37474f', 'cterm': 17 }
-let s:line_numbers = { 'gui': '#37474f', 'cterm': 145 }
-let s:line_highlight = { 'gui': '#1a2327', 'cterm': 235 }
-let s:white = { 'gui': '#ffffff', 'cterm': 231 }
+let s:line_numbers = { 'gui': '#986667', 'cterm': 145 }
+let s:line_highlight = { 'gui': '#694748', 'cterm': 235 }
+let s:white = { 'gui': '#ffe2e7', 'cterm': 231 }
 let s:black = { 'gui': '#000000', 'cterm': 232 }
-let s:red = { 'gui': '#ff5370', 'cterm': 203 }
-let s:orange = { 'gui': '#f78c6c', 'cterm': 209 }
-let s:yellow = { 'gui': '#ffcb6b', 'cterm': 11 }
-let s:green = { 'gui': '#c3e88d', 'cterm': 2 } " 186 –– almost perfect match
-let s:cyan = { 'gui': '#89ddff', 'cterm': 117 }
-let s:blue = { 'gui': '#82aaff', 'cterm': 111 }
+let s:red = { 'gui': '#fb4934', 'cterm': 203 }
+let s:orange = { 'gui': '#de8b50', 'cterm': 209 }
+let s:yellow = { 'gui': '#f0cb74', 'cterm': 11 }
+let s:green = { 'gui': '#b8bb26', 'cterm': 2 } " 186 –– almost perfect match
+let s:cyan = { 'gui': '#8ec07c', 'cterm': 117 }
+let s:blue = { 'gui': '#458588', 'cterm': 111 }
 let s:paleblue = { 'gui': '#b2ccd6', 'cterm': 152 }
-let s:purple = { 'gui': '#c792ea', 'cterm': 176 }
+let s:purple = { 'gui': '#d3869b', 'cterm': 176 }
 let s:brown = { 'gui': '#c17e70', 'cterm': 137 }
 let s:pink = { 'gui': '#f07178', 'cterm': 204 }
-let s:violet = { 'gui': '#bb80b3', 'cterm': 139 }
+let s:violet = { 'gui': '#d3869b', 'cterm': 139 }
 
 " Theme-specific color overrides
 if g:material_theme_style == 'palenight' || g:material_theme_style == 'palenight-community'
@@ -113,11 +113,11 @@ elseif g:material_theme_style == 'lighter' || g:material_theme_style == 'lighter
   let s:guides = { 'gui': '#b0bec5', 'cterm': 146 }
   let s:line_numbers = { 'gui': '#cfd8dc', 'cterm': 188 }
   let s:line_highlight = { 'gui': '#ecf0f1', 'cterm': 253 }
-  let s:white = { 'gui': '#ffffff', 'cterm': 231 }
-  let s:black = { 'gui': '#000000', 'cterm': 0 }
-  let s:red = { 'gui': '#e53935', 'cterm': 160 }
-  let s:orange = { 'gui': '#f76d47', 'cterm': 202 }
-  let s:yellow = { 'gui': '#ffb62c', 'cterm': 214 }
+  let s:white = { 'gui': '#09a4ae', 'cterm': 231 }
+  let s:black = { 'gui': '#282828', 'cterm': 0 }
+  let s:red = { 'gui': '#cc241d', 'cterm': 160 }
+  let s:orange = { 'gui': '#d65d0e', 'cterm': 202 }
+  let s:yellow = { 'gui': '#d79921', 'cterm': 214 }
   let s:green = { 'gui': '#91b859', 'cterm': 107 }
   let s:cyan = { 'gui': '#39adb5', 'cterm': 37 }
   let s:blue = { 'gui': '#6182b8', 'cterm': 67 }
@@ -160,7 +160,7 @@ call s:SetHighlight('ColorColumn', '', s:invisibles, '')
 call s:SetHighlight('Cursor', s:bg, s:caret, '')
 call s:SetHighlight('CursorColumn', '', s:line_highlight, '')
 call s:SetHighlight('CursorLine', '', s:line_highlight, '')
-call s:SetHighlight('CursorLineNr', s:comments, '', '')
+call s:SetHighlight('CursorLineNr', s:caret, s:line_highlight, '')
 call s:SetHighlight('Directory', s:blue, '', '')
 call s:SetHighlight('DiffAdd', s:green, s:bg, '')
 call s:SetHighlight('DiffDelete', s:red, s:bg, '')
@@ -170,7 +170,7 @@ call s:SetHighlight('ErrorMsg', s:bg, s:red, 'bold')
 call s:SetHighlight('FoldColumn', s:line_numbers, s:bg, '')
 call s:SetHighlight('Folded', s:brown, s:bg, 'bold')
 call s:SetHighlight('LineNr', s:line_numbers, '', '')
-call s:SetHighlight('MatchParen', s:caret, s:bg, 'bold')
+call s:SetHighlight('MatchParen', s:comments, s:cyan, 'bold')
 call s:SetHighlight('ModeMsg', s:green, '', '')
 call s:SetHighlight('MoreMsg', s:green, '', '')
 call s:SetHighlight('NonText', s:comments, '', '')
@@ -180,8 +180,8 @@ call s:SetHighlight('PmenuSel', s:bg, s:cyan, '')
 call s:SetHighlight('PmenuSbar', '', s:selection, '')
 call s:SetHighlight('PmenuThumb', '', s:comments, '')
 call s:SetHighlight('Question', s:blue, '', '')
-call s:SetHighlight('IncSearch', s:white, s:comments, 'none')
-call s:SetHighlight('Search', s:white, s:comments, 'none')
+call s:SetHighlight('IncSearch', s:bg, s:orange, 'none')
+call s:SetHighlight('Search', s:bg, s:orange, 'none')
 call s:SetHighlight('SignColumn', s:fg, s:bg, '')
 call s:SetHighlight('SpecialKey', s:comments, '', '')
 call s:SetHighlight('SpellCap', s:blue, '', 'undercurl')
@@ -425,10 +425,6 @@ call s:SetHighlight('rubyRegexp', s:cyan, '', '')
 call s:SetHighlight('rubyRegexpDelimiter', s:violet, '', '')
 call s:SetHighlight('rubyStringDelimiter', s:green, '', '')
 
-" Rust
-call s:SetHighlight('CocRustTypeHint', s:invisibles, '', '')
-call s:SetHighlight('CocRustChainingHint', s:invisibles, '', '')
-
 " TeX
 call s:SetHighlight('texBeginEndName', s:blue, '', '')
 call s:SetHighlight('texMathMatcher', s:blue, '', '')
@@ -542,7 +538,7 @@ call s:SetHighlight('CocInfoSign', s:green, '', '')
 if has('nvim')
   let g:terminal_color_background = s:bg.gui
   let g:terminal_color_foreground = s:fg.gui
-  let g:terminal_color_0 = s:comments.gui
+  let g:terminal_color_0 = s:black.gui
   let g:terminal_color_1 = s:red.gui
   let g:terminal_color_2 = s:green.gui
   let g:terminal_color_3 = s:yellow.gui
@@ -560,31 +556,3 @@ if has('nvim')
   let g:terminal_color_15 = g:terminal_color_7
 endif
 
-" Tree-sitter
-call s:SetHighlight('TSAttribute', s:yellow, '', '')
-call s:SetHighlight('TSBoolean', s:pink, '', '')
-call s:SetHighlight('TSConditional', s:cyan, '', 'italic')
-call s:SetHighlight('TSConstructor', s:yellow, '', '')
-call s:SetHighlight('TSConstBuiltin', s:cyan, '', '')
-call s:SetHighlight('TSException', s:cyan, '', 'italic')
-call s:SetHighlight('TSField', s:white, '', '')
-call s:SetHighlight('TSFunction', s:blue, '', '')
-call s:SetHighlight('TSFuncBuiltin', s:blue, '', '')
-call s:SetHighlight('TSInclude', s:cyan, '', 'italic')
-call s:SetHighlight('TSKeyword', s:purple, '', '')
-call s:SetHighlight('TSKeywordOperator', s:cyan, '', 'italic')
-call s:SetHighlight('TSKeywordFunction', s:purple, '', '')
-call s:SetHighlight('TSKeywordReturn', s:cyan, '', 'italic')
-call s:SetHighlight('TSMethod', s:blue, '', '')
-call s:SetHighlight('TSOperator', s:cyan, '', '')
-call s:SetHighlight('TSParameter', s:fg, '', '')
-call s:SetHighlight('TSProperty', s:fg, '', '')
-call s:SetHighlight('TSPunctBracket', s:cyan, '', '')
-call s:SetHighlight('TSPunctDelimiter', s:cyan, '', '')
-call s:SetHighlight('TSRepeat', s:cyan, '', 'italic')
-call s:SetHighlight('TSTag', s:pink, '', '')
-call s:SetHighlight('TSTagDelimiter', s:cyan, '', '')
-call s:SetHighlight('TSTagAttribute', s:purple, '', '')
-call s:SetHighlight('TSType', s:yellow, '', '')
-call s:SetHighlight('TSVariable', s:fg, '', '')
-call s:SetHighlight('TSVariableBuiltin', s:fg, '', '')
