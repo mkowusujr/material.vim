@@ -1,8 +1,8 @@
 # material.vim
 
-A port of the [Material](https://material-theme.site) color scheme for Vim/Neovim.
+A port of the [Material](https://material-theme.site) color scheme for Vim/Neovim. Color Scheme based on Spicetify Ziro Red Dark
 
-![](screenshot/example_material_vim.jpg)
+![](screenshots/example_material_vim.jpg)
 
 ## Installation
 
