@@ -51,7 +51,7 @@ endfun
 
 " Default colors
 set background=dark
-let s:bg = { 'gui': '#402f31', 'cterm': 'none' }
+let s:bg = { 'gui': '#5a3a3e', 'cterm': 'none' }
 let s:fg = { 'gui': '#ebdbb2', 'cterm': 231 }
 let s:invisibles = { 'gui': '#694748', 'cterm': 66 }
 let s:comments = { 'gui': '#aa8588', 'cterm': 145 }
